@@ -6,15 +6,15 @@ import java.util.Map;
 public class Endpoint {
 
     private int latencyFromCS = 0;
-    private int latencyFromDS = 0;
+    private int latencyFromDC = 0;
 
     private Map<Video, Integer> videoRequests;
 
     private List<CacheServer> cs;
 
-    public Endpoint(int latencyFromCS, int latencyFromDS, Map<Video, Integer> videoRequests, List<CacheServer> cs) {
+    public Endpoint(int latencyFromCS, int latencyFromDC, Map<Video, Integer> videoRequests, List<CacheServer> cs) {
         this.latencyFromCS = latencyFromCS;
-        this.latencyFromCS = latencyFromDS;
+        this.latencyFromDC = latencyFromDC;
         this.videoRequests = videoRequests;
         this.cs = cs;
     }
@@ -27,12 +27,12 @@ public class Endpoint {
         this.latencyFromCS = latencyFromCS;
     }
 
-    public int getLatencyFromDS() {
-        return latencyFromDS;
+    public int getLatencyFromDC() {
+        return latencyFromDC;
     }
 
-    public void setLatencyFromDS(int latencyFromDS) {
-        this.latencyFromDS = latencyFromDS;
+    public void setLatencyFromDS(int latencyFromDC) {
+        this.latencyFromDC = latencyFromDC;
     }
 
     public Map<Video, Integer> getVideoRequests() {
