@@ -22,6 +22,8 @@ public class Main {
             e.printStackTrace();
         }
 
+        System.out.println(dc.getVideos().size());
+
         System.out.println(dc.getEndpoints().size());
         for (Endpoint endpoint : dc.getEndpoints()) {
             if (endpoint.getCss().size() == 0) {

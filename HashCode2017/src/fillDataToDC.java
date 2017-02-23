@@ -49,18 +49,15 @@ public class fillDataToDC {
         int counterOfRequests = 0;
 
         //Video sizes MB
-        List<Video> videos = new ArrayList<Video>();
-
-        String[] split = params[1].split(" ");
+        String[] split = inputArray[1].split(" ");
         for (int i = 0; i < split.length; i++) {
             String string = split[i];
             Video video = new Video();
             video.setSize(Integer.parseInt(string));
             video.setIndex(i);
-            videos.add(video);
-
-            dc.setVideos(videos);
+            dc.addVideo(video);
         }
+
 
         //endpoints
         while (counterOfEndpoints < numberOfEndpoints) {
