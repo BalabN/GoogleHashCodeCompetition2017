@@ -48,7 +48,7 @@ public class fillDataToDC {
 		int counterOfEndpoints = 0;
 		int nextEndpointJump = 0;
 		int counterOfRequests = 0;
-		
+
 		
 		//Video sizes MB
 		List<Video> videos = new ArrayList<Video>();
@@ -57,11 +57,16 @@ public class fillDataToDC {
 			Video video = new Video();
 			video.setSize(Integer.parseInt(string));
 			videos.add(video);
+			
+			dc.setVideos(videos);
 		}
 		
 		//endpoints
-		int pointOfStartRequest = 0;
+		
 		while(counterOfEndpoints < numberOfEndpoints){
+			System.out.println("counterOfEndpoints"+counterOfEndpoints);
+			System.out.println(numberOfEndpoints);
+			
 			Endpoint endpoint = new Endpoint();
 			
 			params = inputArray[2+nextEndpointJump].split(" ");
@@ -72,22 +77,28 @@ public class fillDataToDC {
 			int tmpCachceConnectionsCounter = 0;
 			
 			while(tmpCachceConnectionsCounter < NumberOfCahceConnections){
+				System.out.println("counter");
+				System.out.println(2+nextEndpointJump+1+tmpCachceConnectionsCounter);
+				
+				System.out.println("number cahce:"+NumberOfCahceConnections);
 				params = inputArray[2+nextEndpointJump+1+tmpCachceConnectionsCounter].split(" ");
 				
 				CacheServer cacheserver = new CacheServer();
 				cacheserver.setIndex(Integer.parseInt(params[0]));
-				
+
 				endpoint.addCs(new Pair<>(cacheserver,Integer.parseInt(params[1])));
 				
 				
 				tmpCachceConnectionsCounter++;
 			}
 			
-			nextEndpointJump = nextEndpointJump + tmpCachceConnectionsCounter;
+			nextEndpointJump = nextEndpointJump + tmpCachceConnectionsCounter + 1;
+			counterOfEndpoints++;
 		}
 		
 		//request
 		while(counterOfRequests < numberOfRequests){
+			params = inputArray[2+nextEndpointJump].split(" ");
 			
 		}
 		
