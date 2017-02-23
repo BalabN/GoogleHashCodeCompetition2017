@@ -8,6 +8,10 @@ public class CacheServer {
     private List<Video> videos;
 
     private int index;
+    
+    public CacheServer(){
+    	
+    }
 
     public CacheServer(int maxSize, List<Video> videos){
         this.maxSize = maxSize;

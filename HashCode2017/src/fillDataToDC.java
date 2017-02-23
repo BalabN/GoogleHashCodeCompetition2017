@@ -1,9 +1,13 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
+import Models.CacheServer;
 import Models.DataCenter;
 import Models.Endpoint;
+import Models.Pair;
 import Models.Video;
 
 public class fillDataToDC {
@@ -42,14 +46,41 @@ public class fillDataToDC {
 		int capacityOfCaches = Integer.parseInt(params[4]);
 		
 		int counterOfEndpoints = 0;
+		int nextEndpointJump = 0;
 		
 		//Video sizes MB
+		List<Video> videos = new ArrayList<Video>();
+		
 		for (String string : params[1].split(" ")) {
-			dc.addVideo(new Video(Integer.parseInt(string),null,));
+			Video video = new Video();
+			video.setSize(Integer.parseInt(string));
+			videos.add(video);
 		}
 		
+		//endpoints
 		while(counterOfEndpoints < numberOfEndpoints){
 			Endpoint endpoint = new Endpoint();
+			
+			params = inputArray[2+nextEndpointJump].split(" ");
+			
+			endpoint.setLatencyFromDS(Integer.parseInt(params[0]));
+			int NumberOfCahceConnections = Integer.parseInt(params[1]);
+			
+			int tmpCachceConnectionsCounter = 0;
+			
+			while(tmpCachceConnectionsCounter < NumberOfCahceConnections){
+				params = inputArray[2+nextEndpointJump+1+tmpCachceConnectionsCounter].split(" ");
+				
+				CacheServer cacheserver = new CacheServer();
+				cacheserver.setIndex(Integer.parseInt(params[0]));
+				
+				endpoint.addCs(new Pair<>(cacheserver,Integer.parseInt(params[1])));
+				
+				
+				tmpCachceConnectionsCounter++;
+			}
+			
+			nextEndpointJump = nextEndpointJump + tmpCachceConnectionsCounter;
 		}
 		
 		
