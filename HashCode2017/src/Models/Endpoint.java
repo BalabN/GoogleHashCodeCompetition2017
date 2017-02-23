@@ -11,7 +11,15 @@ public class Endpoint {
 
     private Map<Video, Integer> videoRequests;
 
+<<<<<<< Updated upstream
     private List<CacheServer> css;
+=======
+    private List<CacheServer> cs;
+    
+    public Endpoint(){
+    	
+    }
+>>>>>>> Stashed changes
 
     public Endpoint(int latencyFromCS, int latencyFromDC, Map<Video, Integer> videoRequests, List<CacheServer> css) {
         this.latencyFromCS = latencyFromCS;
