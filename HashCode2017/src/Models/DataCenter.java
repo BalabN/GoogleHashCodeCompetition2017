@@ -37,6 +37,10 @@ public class DataCenter {
         videos.add(video);
     }
 
+    public Video getVideo(int index) {
+        return videos.stream().filter(video -> video.getIndex() == index).findFirst().get();
+    }
+
     public List<Endpoint> getEndpoints() {
         return endpoints;
     }
