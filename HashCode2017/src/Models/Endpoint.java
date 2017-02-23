@@ -11,15 +11,12 @@ public class Endpoint {
 
     private Map<Video, Integer> videoRequests;
     
-    private List<CacheServer> css;
+    private List<Pair<CacheServer, Integer>> css;
 
-    private List<CacheServer> cs;
-    
     public Endpoint(){
-    	
     }
 
-    public Endpoint(int latencyFromCS, int latencyFromDC, Map<Video, Integer> videoRequests, List<CacheServer> css) {
+    public Endpoint(int latencyFromCS, int latencyFromDC, Map<Video, Integer> videoRequests, List<Pair<CacheServer, Integer>> css) {
         this.latencyFromCS = latencyFromCS;
         this.latencyFromDC = latencyFromDC;
         this.videoRequests = videoRequests;
@@ -50,20 +47,20 @@ public class Endpoint {
         this.videoRequests = videoRequests;
     }
 
-    public List<CacheServer> getCss() {
+    public List<Pair<CacheServer, Integer>> getCss() {
         return css;
     }
 
-    public void setCs(List<CacheServer> css) {
+    public void setCs(List<Pair<CacheServer, Integer>> css) {
         this.css = css;
     }
 
-    public void addCs(CacheServer cs) {
-        css.add(cs);
+    public void addCs(CacheServer cs, int latencyFromCS) {
+        css.add(new Pair<>(cs, latencyFromCS));
     }
 
-    public CacheServer getCs(int index) {
-        return css.stream().filter(cs -> cs.getIndex() == index).findFirst().get();
+    public Pair<CacheServer, Integer> getCs(int index) {
+        return css.stream().filter(cs -> cs.first.getIndex() == index).findFirst().get();
     }
 
     public int getIndex() {
