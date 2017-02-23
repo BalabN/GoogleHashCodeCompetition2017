@@ -1,12 +1,17 @@
 package Models;
 
+import java.util.Map;
+
 public class Video {
     private int size = 0;
     private CacheServer cs = null;
     private DataCenter dc = DataCenter.getInstance();
-    private int reqPerLocation = 0;
+    // MAP
+    private Map<Endpoint, Integer> reqPerLocation;
 
-    public Video(int size, CacheServer cs, int reqPerLocation) {
+    private int index;
+
+    public Video(int size, CacheServer cs, Map<Endpoint, Integer> reqPerLocation) {
         this.size = size;
         this.cs = cs;
         this.reqPerLocation = reqPerLocation;
@@ -27,13 +32,18 @@ public class Video {
     public void setCs(CacheServer cs) {
         this.cs = cs;
     }
-
-    public int getReqPerLocation() {
+    
+    public Map<Endpoint, Integer> getReqPerLocation() {
         return reqPerLocation;
     }
 
-    public void setReqPerLocation(int reqPerLocation) {
+    public void setReqPerLocation(Map<Endpoint, Integer> reqPerLocation) {
         this.reqPerLocation = reqPerLocation;
     }
-
+    public int getIndex() {
+        return index;
+    }
+    public void setIndex(int index) {
+        this.index = index;
+    }
 }
