@@ -47,6 +47,8 @@ public class fillDataToDC {
 		
 		int counterOfEndpoints = 0;
 		int nextEndpointJump = 0;
+		int counterOfRequests = 0;
+		
 		
 		//Video sizes MB
 		List<Video> videos = new ArrayList<Video>();
@@ -58,6 +60,7 @@ public class fillDataToDC {
 		}
 		
 		//endpoints
+		int pointOfStartRequest = 0;
 		while(counterOfEndpoints < numberOfEndpoints){
 			Endpoint endpoint = new Endpoint();
 			
@@ -83,7 +86,10 @@ public class fillDataToDC {
 			nextEndpointJump = nextEndpointJump + tmpCachceConnectionsCounter;
 		}
 		
-		
+		//request
+		while(counterOfRequests < numberOfRequests){
+			
+		}
 		
 	}
 }
