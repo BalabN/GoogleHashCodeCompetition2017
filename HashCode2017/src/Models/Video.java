@@ -3,10 +3,10 @@ package Models;
 import java.util.Map;
 
 public class Video {
+
     private int size = 0;
     private CacheServer cs = null;
     private DataCenter dc = DataCenter.getInstance();
-    // MAP
     private Map<Endpoint, Integer> reqPerLocation;
 
     public Video(int size, CacheServer cs, Map<Endpoint, Integer> reqPerLocation) {
