@@ -12,12 +12,12 @@ public class CacheServer {
         this.videos = videos;
     }
 
-    public int getMaxSIze() {
+    public int getMaxSize() {
         return maxSize;
     }
 
-    public void setMaxSIze(int maxSIze) {
-        this.maxSize = maxSIze;
+    public void setMaxSize(int maxSize) {
+        this.maxSize = maxSize;
     }
 
     public List<Video> getVideos() {
