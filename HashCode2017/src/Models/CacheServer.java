@@ -27,4 +27,8 @@ public class CacheServer {
     public void setVideos(List<Video> videos) {
         this.videos = videos;
     }
+
+    public void addVideo(Video video) {
+        videos.add(video);
+    }
 }
