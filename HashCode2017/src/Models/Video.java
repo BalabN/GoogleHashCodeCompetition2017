@@ -9,8 +9,6 @@ public class Video {
     // MAP
     private Map<Endpoint, Integer> reqPerLocation;
 
-    private int index;
-
     public Video(int size, CacheServer cs, Map<Endpoint, Integer> reqPerLocation) {
         this.size = size;
         this.cs = cs;
@@ -40,10 +38,5 @@ public class Video {
     public void setReqPerLocation(Map<Endpoint, Integer> reqPerLocation) {
         this.reqPerLocation = reqPerLocation;
     }
-    public int getIndex() {
-        return index;
-    }
-    public void setIndex(int index) {
-        this.index = index;
-    }
+
 }

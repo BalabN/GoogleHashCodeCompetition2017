@@ -7,6 +7,8 @@ public class CacheServer {
     private int maxSize = 0;
     private List<Video> videos;
 
+    private int index;
+
     public CacheServer(int maxSize, List<Video> videos){
         this.maxSize = maxSize;
         this.videos = videos;
@@ -30,5 +32,11 @@ public class CacheServer {
 
     public void addVideo(Video video) {
         videos.add(video);
+    }
+    public int getIndex() {
+        return index;
+    }
+    public void setIndex(int index) {
+        this.index = index;
     }
 }
