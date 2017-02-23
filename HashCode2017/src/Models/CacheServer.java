@@ -2,16 +2,14 @@ package Models;
 
 import java.util.List;
 
-/**
- * Created by Nikola on 23.2.2017..
- */
 public class CacheServer {
+    
     private int maxSize = 0;
-    List<Integer> video;
+    private List<Video> videos;
 
-    public CacheServer(int maxSize, List<Integer> video){
+    public CacheServer(int maxSize, List<Video> videos){
         this.maxSize = maxSize;
-        this.video = video;
+        this.videos = videos;
     }
 
     public int getMaxSIze() {
@@ -22,11 +20,11 @@ public class CacheServer {
         this.maxSize = maxSIze;
     }
 
-    public List<Integer> getVideo() {
-        return video;
+    public List<Video> getVideos() {
+        return videos;
     }
 
-    public void setVideo(List<Integer> video) {
-        this.video = video;
+    public void setVideos(List<Video> videos) {
+        this.videos = videos;
     }
 }

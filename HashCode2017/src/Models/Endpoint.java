@@ -8,11 +8,11 @@ public class Endpoint {
     private int latencyFromCS = 0;
     private int latencyFromDS = 0;
 
-    Map<Integer, Integer> videoRequests;
+    Map<Video, Integer> videoRequests;
 
-    List<Integer> cs;
+    List<CacheServer> cs;
 
-    public Endpoint(int latencyFromCS, int latencyFromDS, Map<Integer, Integer> videoRequests, List<Integer> cs) {
+    public Endpoint(int latencyFromCS, int latencyFromDS, Map<Video, Integer> videoRequests, List<CacheServer> cs) {
         this.latencyFromCS = latencyFromCS;
         this.latencyFromCS = latencyFromDS;
         this.videoRequests = videoRequests;
@@ -35,19 +35,19 @@ public class Endpoint {
         this.latencyFromDS = latencyFromDS;
     }
 
-    public Map<Integer, Integer> getVideoRequests() {
+    public Map<Video, Integer> getVideoRequests() {
         return videoRequests;
     }
 
-    public void setVideoRequests(Map<Integer, Integer> videoRequests) {
+    public void setVideoRequests(Map<Video, Integer> videoRequests) {
         this.videoRequests = videoRequests;
     }
 
-    public List<Integer> getCs() {
+    public List<CacheServer> getCs() {
         return cs;
     }
 
-    public void setCs(List<Integer> cs) {
+    public void setCs(List<CacheServer> cs) {
         this.cs = cs;
     }
 }

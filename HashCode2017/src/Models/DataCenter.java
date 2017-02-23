@@ -3,17 +3,17 @@ package Models;
 import java.util.List;
 
 public class DataCenter {
-    List<Integer> videos;
+    List<Video> videos;
 
-    public DataCenter(List<Integer> videos) {
+    public DataCenter(List<Video> videos) {
         this.videos = videos;
     }
 
-    public List<Integer> getVideos() {
+    public List<Video> getVideos() {
         return videos;
     }
 
-    public void setVideos(List<Integer> videos) {
+    public void setVideos(List<Video> videos) {
         this.videos = videos;
     }
 }
