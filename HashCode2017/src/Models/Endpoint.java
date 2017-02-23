@@ -62,4 +62,12 @@ public class Endpoint {
     public void setIndex(int index) {
         this.index = index;
     }
+
+    public void addVideoRequest(Video video, int requests) {
+        videoRequests.put(video, requests);
+    }
+
+    public int getReqForVideo(Video video) {
+        videoRequests.get(video);
+    }
 }
