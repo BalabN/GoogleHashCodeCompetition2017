@@ -12,3 +12,6 @@
 hs_err_pid*
 HashCode2017/.idea
 *.iml
+HashCode2017/.classpath
+HashCode2017/.project
+HashCode2017/.settings/org.eclipse.jdt.core.prefs
