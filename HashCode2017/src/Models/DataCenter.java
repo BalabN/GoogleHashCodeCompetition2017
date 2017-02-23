@@ -4,9 +4,12 @@ import java.util.List;
 
 public class DataCenter {
 
-    public static DataCenter instance = new DataCenter();
+    private static DataCenter instance = new DataCenter();
 
     public static DataCenter getInstance() {
+        if(instance == null) {
+            instance = new DataCenter();
+        }
         return instance;
     }
 
