@@ -87,11 +87,17 @@ public class fillDataToDC {
             dc.addEndpoint(endpoint);
         }
 
-        //request
-        //		while(counterOfRequests < numberOfRequests){
-        //			params = inputArray[2+nextEndpointJump].split(" ");
-        //
-        //		}
+		//request
+		while(counterOfRequests < numberOfRequests){
+			params = inputArray[2+nextEndpointJump+counterOfRequests].split(" ");
 
-    }
+			Video video = dc.getVideo(Integer.parseInt(params[0]));
+			
+			dc.getEndpoint(Integer.parseInt(params[1])).addVideoRequest(video, Integer.parseInt(params[2]));
+			
+
+			counterOfRequests++;
+		}
+	}
+
 }
