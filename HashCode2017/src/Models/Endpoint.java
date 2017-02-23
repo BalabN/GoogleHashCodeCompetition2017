@@ -8,9 +8,9 @@ public class Endpoint {
     private int latencyFromCS = 0;
     private int latencyFromDS = 0;
 
-    Map<Video, Integer> videoRequests;
+    private Map<Video, Integer> videoRequests;
 
-    List<CacheServer> cs;
+    private List<CacheServer> cs;
 
     public Endpoint(int latencyFromCS, int latencyFromDS, Map<Video, Integer> videoRequests, List<CacheServer> cs) {
         this.latencyFromCS = latencyFromCS;

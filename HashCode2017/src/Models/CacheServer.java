@@ -3,7 +3,7 @@ package Models;
 import java.util.List;
 
 public class CacheServer {
-    
+
     private int maxSize = 0;
     private List<Video> videos;
 
