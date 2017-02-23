@@ -45,8 +45,8 @@ public class Endpoint {
         this.css = css;
     }
 
-    public void addCs(CacheServer cs, int latencyFromCS) {
-        css.add(new Pair<>(cs, latencyFromCS));
+    public void addCs(Pair<CacheServer, Integer> pair) {
+        css.add(pair);
     }
 
     public Pair<CacheServer, Integer> getCs(int index) {
