@@ -29,7 +29,7 @@ public class fillDataToDC {
 	    }
 	}
 	
-	public void fillDataToDCfromFile(String fileName) throws IOException{
+	public static void fillDataToDCfromFile(String fileName) throws IOException{
 		DataCenter dc = DataCenter.getInstance();
 		String input = readFile("Items/"+fileName);
 		
