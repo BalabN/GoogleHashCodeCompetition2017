@@ -5,6 +5,7 @@ import java.util.Map;
 
 public class Endpoint {
 
+    private int index;
     private int latencyFromCS = 0;
     private int latencyFromDC = 0;
 
@@ -49,5 +50,13 @@ public class Endpoint {
 
     public void setCs(List<CacheServer> cs) {
         this.cs = cs;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
     }
 }

@@ -39,4 +39,12 @@ public class DataCenter {
     public void setEndpoints(List<Endpoint> endpoints) {
         this.endpoints = endpoints;
     }
+
+    public void addEndpoint(Endpoint endpoint) {
+        endpoints.add(endpoint);
+    }
+
+    public Endpoint getEndpoint(int endpointIndex) {
+        return endpoints.stream().filter(endpoint -> endpoint.getIndex() == endpointIndex).findFirst().get();
+    }
 }
