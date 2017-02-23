@@ -1,5 +1,6 @@
 package Models;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class Video {
@@ -7,7 +8,7 @@ public class Video {
     private int size = 0;
     private CacheServer cs = null;
     private DataCenter dc = DataCenter.getInstance();
-    private Map<Endpoint, Integer> reqPerLocation;
+    private Map<Endpoint, Integer> reqPerLocation = new HashMap<>();
 
     private int index;
 

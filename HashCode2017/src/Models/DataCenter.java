@@ -1,5 +1,6 @@
 package Models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DataCenter {
@@ -13,9 +14,9 @@ public class DataCenter {
         return instance;
     }
 
-    private List<Video> videos;
-    private List<Endpoint> endpoints;
-    private List<CacheServer> css;
+    private List<Video> videos = new ArrayList<>();
+    private List<Endpoint> endpoints = new ArrayList<>();
+    private List<CacheServer> css = new ArrayList<>();
 
     private DataCenter() {
     }

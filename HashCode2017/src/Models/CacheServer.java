@@ -1,11 +1,12 @@
 package Models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CacheServer {
 
     private int maxSize = 0;
-    private List<Video> videos;
+    private List<Video> videos = new ArrayList<>();
 
     private int index;
     

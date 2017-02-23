@@ -1,5 +1,7 @@
 package Models;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -8,9 +10,9 @@ public class Endpoint {
     private int index;
     private int latencyFromDC = 0;
 
-    private Map<Video, Integer> videoRequests;
+    private Map<Video, Integer> videoRequests = new HashMap<>();
     
-    private List<Pair<CacheServer, Integer>> css;
+    private List<Pair<CacheServer, Integer>> css = new ArrayList<>();
 
     public Endpoint(){
     }
