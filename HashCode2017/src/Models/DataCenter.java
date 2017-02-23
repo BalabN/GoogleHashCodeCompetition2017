@@ -11,6 +11,7 @@ public class DataCenter {
     }
 
     private List<Video> videos;
+    private List<Endpoint> endpoints;
 
     private DataCenter() {
     }
@@ -29,5 +30,13 @@ public class DataCenter {
 
     public void addVideo(Video video) {
         videos.add(video);
+    }
+
+    public List<Endpoint> getEndpoints() {
+        return endpoints;
+    }
+
+    public void setEndpoints(List<Endpoint> endpoints) {
+        this.endpoints = endpoints;
     }
 }
