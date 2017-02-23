@@ -68,6 +68,6 @@ public class Endpoint {
     }
 
     public int getReqForVideo(Video video) {
-        videoRequests.get(video);
+        return videoRequests.get(video);
     }
 }
