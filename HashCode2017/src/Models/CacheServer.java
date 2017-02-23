@@ -39,4 +39,16 @@ public class CacheServer {
     public void setIndex(int index) {
         this.index = index;
     }
+
+    public int getSize() {
+        int size = 0;
+        for (Video video : videos) {
+            size += video.getSize();
+        }
+        return size;
+    }
+
+    public boolean canAddVideo(Video video) {
+        return video.getSize() <= (maxSize - getSize());
+    }
 }

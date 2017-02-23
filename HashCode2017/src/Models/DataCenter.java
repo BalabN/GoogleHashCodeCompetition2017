@@ -15,6 +15,7 @@ public class DataCenter {
 
     private List<Video> videos;
     private List<Endpoint> endpoints;
+    private List<CacheServer> css;
 
     private DataCenter() {
     }
@@ -49,5 +50,21 @@ public class DataCenter {
 
     public Endpoint getEndpoint(int endpointIndex) {
         return endpoints.stream().filter(endpoint -> endpoint.getIndex() == endpointIndex).findFirst().get();
+    }
+
+    public List<CacheServer> getCss() {
+        return css;
+    }
+
+    public void setCss(List<CacheServer> css) {
+        this.css = css;
+    }
+
+    public void addCs(CacheServer cs) {
+        css.add(cs);
+    }
+
+    public CacheServer getCs(int index) {
+        return css.stream().filter(cacheServer -> cacheServer.getIndex() == index).findFirst().get();
     }
 }
