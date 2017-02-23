@@ -10,7 +10,7 @@ public class Endpoint {
     private int index;
     private int latencyFromDC = 0;
 
-    private Map<Video, Integer> videoRequests = new HashMap<>();
+    private List<Pair<Video, Integer>> videoRequests = new ArrayList<>();
     
     private List<Pair<CacheServer, Integer>> css = new ArrayList<>();
 
@@ -19,7 +19,6 @@ public class Endpoint {
 
     public Endpoint(int latencyFromDC, Map<Video, Integer> videoRequests, List<Pair<CacheServer, Integer>> css) {
         this.latencyFromDC = latencyFromDC;
-        this.videoRequests = videoRequests;
         this.css = css;
     }
 
@@ -31,11 +30,11 @@ public class Endpoint {
         this.latencyFromDC = latencyFromDC;
     }
 
-    public Map<Video, Integer> getVideoRequests() {
+    public List<Pair<Video, Integer>> getVideoRequests() {
         return videoRequests;
     }
 
-    public void setVideoRequests(Map<Video, Integer> videoRequests) {
+    public void setVideoRequests(List<Pair<Video, Integer>> videoRequests) {
         this.videoRequests = videoRequests;
     }
 
@@ -64,10 +63,10 @@ public class Endpoint {
     }
 
     public void addVideoRequest(Video video, int requests) {
-        videoRequests.put(video, requests);
+        videoRequests.add(new Pair<Video, Integer>(video, requests));
     }
 
-    public int getReqForVideo(Video video) {
-        return videoRequests.get(video);
-    }
+//    public int getReqForVideo(Video video) {
+//        return videoRequests.get(video);
+//    }
 }

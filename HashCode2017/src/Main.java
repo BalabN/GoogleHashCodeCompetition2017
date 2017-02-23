@@ -17,7 +17,7 @@ public class Main {
         DataCenter dc = DataCenter.getInstance();
 
         try {
-            fillDataToDC.fillDataToDCfromFile("me_at_the_zoo.in");
+            fillDataToDC.fillDataToDCfromFile("videos_worth_spreading.in");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -29,19 +29,29 @@ public class Main {
             if (endpoint.getCss().size() == 0) {
                 continue;
             }
-//            for (Map.Entry<Video, Integer> entry : endpoint.getVideoRequests().entrySet()) {
+            CacheServer minCs = getSmallestLatency(endpoint);
+            for (Pair<Video, Integer> entry : endpoint.getVideoRequests()) {
+                if (dc.getCs(minCs.getIndex()).canAddVideo(entry.first)) {
+                    dc.getCs(minCs.getIndex()).addVideo(entry.first);
+                } else {
+                    continue;
+                }
 //                System.out.println(entry.getKey() + "/" + entry.getValue());
-                CacheServer minCs = getSmallestLatency(endpoint);
                 System.out.println("Smallest latency server index = " + minCs.getIndex());
                 System.out.println("Smallest latency endpoint = " + endpoint.getIndex());
-//            }
+            }
         }
 
-//        if (dc.getCs(csData.first.getIndex()).canAddVideo(entry.getKey())) {
-//
-//        } else {
-//            continue;
-//        }
+        //                if (dc.getCs(csData.first.getIndex()).canAddVideo(entry.getKey())) {
+        //
+        //                } else {
+        //                    continue;
+        //                }
+        for (CacheServer cs : dc.getCss()) {
+            for (Video video : cs.getVideos()) {
+                System.out.println("Cs " + cs.getIndex() + " has " + video.getIndex() + " index");
+            }
+        }
     }
 
     public static CacheServer getSmallestLatency(Endpoint endpoint) {

@@ -44,6 +44,13 @@ public class fillDataToDC {
         int numberOfCaches = Integer.parseInt(params[3]);
         int capacityOfCaches = Integer.parseInt(params[4]);
 
+        for (int i = 0; i < numberOfCaches; i++) {
+            CacheServer cs = new CacheServer();
+            cs.setIndex(i);
+            cs.setMaxSize(capacityOfCaches);
+            dc.addCs(cs);
+        }
+
         int counterOfEndpoints = 0;
         int nextEndpointJump = 0;
         int counterOfRequests = 0;
