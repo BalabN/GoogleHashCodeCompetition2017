@@ -1,17 +1,12 @@
 package Models;
 
-/**
- * Created by Nikola on 23.2.2017..
- */
-//size integer
-//integer cache
-//
 public class Video {
     private int size = 0;
-    private int cs = 0;
+    private CacheServer cs = null;
+    private DataCenter dc = DataCenter.getInstance();
     private int reqPerLocation = 0;
 
-    public Video(int size, int cs, int reqPerLocation) {
+    public Video(int size, CacheServer cs, int reqPerLocation) {
         this.size = size;
         this.cs = cs;
         this.reqPerLocation = reqPerLocation;
@@ -25,11 +20,11 @@ public class Video {
         this.size = size;
     }
 
-    public int getCs() {
+    public CacheServer getCs() {
         return cs;
     }
 
-    public void setCs(int cs) {
+    public void setCs(CacheServer cs) {
         this.cs = cs;
     }
 

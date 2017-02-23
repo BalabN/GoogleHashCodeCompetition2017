@@ -3,9 +3,19 @@ package Models;
 import java.util.List;
 
 public class DataCenter {
+
+    public static DataCenter instance = new DataCenter();
+
+    public static DataCenter getInstance() {
+        return instance;
+    }
+
     private List<Video> videos;
 
-    public DataCenter(List<Video> videos) {
+    private DataCenter() {
+    }
+
+    private DataCenter(List<Video> videos) {
         this.videos = videos;
     }
 
