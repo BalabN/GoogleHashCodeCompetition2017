@@ -33,6 +33,7 @@ public class Main {
             for (Pair<Video, Integer> entry : endpoint.getVideoRequests()) {
                 if (dc.getCs(minCs.getIndex()).canAddVideo(entry.first)) {
                     dc.getCs(minCs.getIndex()).addVideo(entry.first);
+
                 } else {
                     continue;
                 }
@@ -47,11 +48,19 @@ public class Main {
         //                } else {
         //                    continue;
         //                }
+
+        int i = 0;
         for (CacheServer cs : dc.getCss()) {
+            String s = String.valueOf(cs.getIndex());
             for (Video video : cs.getVideos()) {
-                System.out.println("Cs " + cs.getIndex() + " has " + video.getIndex() + " index");
+                s = s.concat(" " + video.getIndex());
+            }
+            if (cs.getVideos().size() > 0) {
+                System.out.println(s);
+                i++;
             }
         }
+        System.out.println("Vsi " + i);
     }
 
     public static CacheServer getSmallestLatency(Endpoint endpoint) {

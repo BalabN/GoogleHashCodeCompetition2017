@@ -36,7 +36,9 @@ public class CacheServer {
     }
 
     public void addVideo(Video video) {
-        videos.add(video);
+        if (getVideos().stream().filter(video1 -> video1 == video).count() == 0) {
+            videos.add(video);
+        }
     }
     public int getIndex() {
         return index;
